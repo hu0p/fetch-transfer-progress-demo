@@ -1,6 +1,6 @@
 # Fetch Transfer Progress Demo
 
-A demo showcasing real-time upload and download progress tracking using the Fetch API. Hopefully this can serve as an easy reference implementation since the documentation out there for this sort of thing isn't great.
+A demo showcasing real-time upload and download progress tracking using the Fetch API. Hopefully this can serve as an easy reference implementation since the documentation out there for this sort of thing isn't great. Note that there is currently no support for fetch upload streaming in Firefox or Safari as of August 2025. I'll try to keep an eye out and update this if that changes
 
 ### Installation
 
