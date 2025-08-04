@@ -127,7 +127,7 @@ h3 {
 button {
   width: 100%;
   padding: 12px 24px;
-  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  background: var(--gradient);
   color: white;
   border: none;
   border-radius: 8px;
