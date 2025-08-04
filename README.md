@@ -7,7 +7,7 @@ A demo showcasing real-time upload and download progress tracking using the Fetc
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/hu0p/fetch-transfer-progress-demo
 cd fetch-transfer-progress-demo
 ```
 
