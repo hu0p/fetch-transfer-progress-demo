@@ -1,13 +1,20 @@
 export async function uploadFile(file, onProgress) {
   let bytesTransferred = 0
 
-  // Feature detection for duplex streaming support
-  const supportsDuplexStreaming = (() => {
-    try {
-      return "duplex" in new Request("", { method: "POST" })
-    } catch {
-      return false
-    }
+  // see https://developer.chrome.com/docs/capabilities/web-apis/fetch-streaming-requests#feature_detection
+  const supportsRequestStreams = (() => {
+    let duplexAccessed = false
+
+    const hasContentType = new Request("", {
+      body: new ReadableStream(),
+      method: "POST",
+      get duplex() {
+        duplexAccessed = true
+        return "half"
+      },
+    }).headers.has("Content-Type")
+
+    return duplexAccessed && !hasContentType
   })()
 
   try {
@@ -24,7 +31,7 @@ export async function uploadFile(file, onProgress) {
     let requestBody
     let fetchOptions
 
-    if (supportsDuplexStreaming) {
+    if (supportsRequestStreams) {
       // Chrome: Use pipeThrough with duplex support
       requestBody = file.stream().pipeThrough(progressTrackingStream)
       fetchOptions = {
