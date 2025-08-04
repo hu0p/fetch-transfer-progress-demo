@@ -1,0 +1,5 @@
+node_modules/
+src/server/uploads/
+src/server/server.crt
+src/server/server.key
+.DS_Store

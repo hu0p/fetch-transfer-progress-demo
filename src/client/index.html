@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch Transfer Progress Demo</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Fetch Progress Tracking Demo</h1>
+
+      <div class="progress-section">
+        <div class="progress-info">
+          <span id="progress-text">Ready</span>
+          <span id="progress-bytes"></span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <div class="download-section">
+          <h3>Download File</h3>
+          <button id="download-btn">Download Demo File (50MB)</button>
+        </div>
+        <div class="upload-section">
+          <h3>Upload File</h3>
+          <input type="file" id="file-input" accept="*/*" />
+          <button id="upload-btn" disabled>Upload File</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

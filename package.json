@@ -1,0 +1,26 @@
+{
+  "name": "fetch-transfer-progress-demo",
+  "version": "1.0.0",
+  "description": "Demo of fetch-based upload/download progress tracking with a simple server",
+  "type": "module",
+  "scripts": {
+    "dev": "npm run setup && concurrently \"npm run server\" \"npm run client\"",
+    "setup": "npm run generate-cert && mkdir -p src/server/uploads && [ ! -f src/server/uploads/demo-file.bin ] && dd if=/dev/zero of=src/server/uploads/demo-file.bin bs=1024 count=51200 || echo 'Demo file already exists'",
+    "server": "node src/server/index.js",
+    "client": "vite --config src/client/vite.config.js",
+    "build": "vite build --config src/client/vite.config.js",
+    "generate-cert": "if [ -f src/server/server.key ] && [ -f src/server/server.crt ]; then echo 'Certificates already generated'; else mkcert -key-file src/server/server.key -cert-file src/server/server.crt localhost; fi"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.1.0",
+    "@fastify/static": "^8.2.0",
+    "fastify": "^5.4.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "vite": "^5.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
