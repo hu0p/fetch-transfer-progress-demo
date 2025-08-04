@@ -21,7 +21,7 @@ npm install
 
 Refer to the [mkcert installation instructions](https://github.com/FiloSottile/mkcert?tab=readme-ov-file#installation) for your platform.
 
-transformStreams require HTTP/2, and HTTP/2 requires TLS, so we need a self-signed certificate to showcase our little upload demo. This project uses mkcert create and install that certificate on any platform. mkcert automates the trust part of the process, so you don't have to bypass any warnings, manually generate certificates, or move around files. It makes the demo just work!
+transformStreams require HTTP/2, and HTTP/2 requires TLS, so we need a self-signed certificate to showcase our little upload demo. This project uses mkcert to generate and install that certificate on any platform. mkcert automates the trust part of the process, so you don't have to bypass any warnings, manually generate certificates, or move around files. It makes the demo just work!
 
 4. Start the development server:
 
